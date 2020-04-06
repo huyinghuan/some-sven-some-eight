@@ -32,9 +32,24 @@ sudo apt install wpasupplicant
 
 ```
 wpa_passphrase wifi名称 wifi密码 > wpa_supplicant.conf
-# 可以在这个文件的最前面加上 
-#ctrl_interface=/var/run/wpa_supplicant
 sudo cp wpa_supplicant.conf /etc/wpa_supplicant.conf
+```
+
+常用的配置文件如下
+
+```
+ctrl_interface=/var/run/wpa_supplicant
+network={
+  ssid="xxx" #wifi名称
+  psk="xxx" #wifi密码 明文或加密后的
+  #可选项
+  # 优先级
+  # priority=9
+  # 隐藏的ssid
+  # scan_ssid=1
+  # 没有密码
+  # key_mgmt=NONE
+}
 ```
 
 启动 
