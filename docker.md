@@ -25,3 +25,9 @@ iptables -I INPUT -i docker0 -j ACCEPT
 ```
 iptables -t raw -A PREROUTING -s 139.162.19.162 -p tcp -j TRACE
 ```
+
+
+拒绝外网访问docker端口
+```
+iptables -R DOCKER-USER 2 -i bond4 -o docker0  -p tcp -m conntrack --ctorigdstport 8081 --ctdir ORIGINAL -j REJECT
+```
