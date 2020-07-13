@@ -9,3 +9,10 @@
 1. iptables 基本手册：https://linux.die.net/man/8/iptables
 2. https://docs.docker.com/network/iptables/
 3. https://serverfault.com/questions/704643/steps-for-limiting-outside-connections-to-docker-container-with-iptables
+
+
+如果docker内无法访问宿主机
+
+```
+iptables -I INPUT -i docker0 -j ACCEPT
+```
