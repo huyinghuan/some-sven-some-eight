@@ -20,7 +20,7 @@ iptables -I INPUT -i docker0 -j ACCEPT
 
 
 
-追踪 `iptables` 流程：
+追踪 `iptables` 流程：`https://www.opsist.com/blog/2015/08/11/how-do-i-see-what-iptables-is-doing.html`
 
 ```
 iptables -t raw -A PREROUTING -s 139.162.19.162 -p tcp -j TRACE
