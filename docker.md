@@ -16,3 +16,12 @@
 ```
 iptables -I INPUT -i docker0 -j ACCEPT
 ```
+
+
+
+
+追踪 `iptables` 流程：
+
+```
+iptables -t raw -A PREROUTING -s 139.162.19.162 -p tcp -j TRACE
+```
